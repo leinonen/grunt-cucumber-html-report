@@ -3,7 +3,7 @@ var path = require('path');
 var Mustache = require('mustache');
 
 function loadTemplate(template) {
-  return fs.readFileSync(path.join('./templates', template + '.html')).toString();
+  return fs.readFileSync(path.join(__dirname, '../templates', template + '.html')).toString();
 }
 
 function fixFilename(name) {
