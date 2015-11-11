@@ -71,7 +71,10 @@ exports.createReport = function(options, grunt) {
   var processElement = function(element) {
     writeImages(grunt, options.dst, element, element.steps);
     // Transform steps to look nice
-    element.steps = element.steps.map(transformStep);
+    //element.steps = element.steps.map(transformStep);
+    element.steps = element.steps.filter(function(step) {
+      return step.name !== undefined;
+    });
   };
 
   reports.forEach(function(report) {
