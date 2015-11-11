@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     cucumber_html_report: {
       options: {
         src: './test/cucumber_report.json',
-        dst: './report'
+        dst: './report/whatever/slask'
       },
       files: {
       }      

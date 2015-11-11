@@ -32,9 +32,13 @@ function writeImages(grunt, destPath, element, steps) {
 }
 
 function parseTags(report) {
-  return report.tags.map(function(tag) {
-    return tag.name;
-  }).join(', ');
+  if (report.tags !== undefined) {
+    return report.tags.map(function(tag) {
+      return tag.name;
+    }).join(', ');
+  } else {
+    return '';
+  }
 }
 
 function transformStep(step) {
@@ -51,6 +55,23 @@ function transformStep(step) {
   return step;
 }
 
+function mkdirSync(path) {
+  try {
+    fs.mkdirSync(path);
+  } catch(e) {
+    if ( e.code !== 'EEXIST' ) {
+      throw e;
+    }
+  }
+}
+
+function mkdirpSync(dirpath) {
+  var parts = dirpath.split(path.sep);
+  for( var i = 1; i <= parts.length; i++ ) {
+    mkdirSync( path.join.apply(null, parts.slice(0, i)) );
+  }
+}
+
 exports.createReport = function(options, grunt) {
 
   // Make sure we have input file!
@@ -61,7 +82,7 @@ exports.createReport = function(options, grunt) {
 
   // Create output directory if not exists
   if (!fs.existsSync(options.dst)){
-    fs.mkdirSync(options.dst);
+    mkdirpSync(options.dst);
     grunt.log.writeln(options.dst + ' directory created.');
   }
 
