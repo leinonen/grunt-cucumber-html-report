@@ -16,7 +16,12 @@ module.exports = function(grunt) {
       src: './cucumber_report.json',
       dst: './cucumber_report'
     });
-    var generator = require('../src/generator');
+    var Report = require('cucumber-html-report');
+    var generator = new Report({
+      source: options.src,
+      dest: options.dst
+    });
+
     return generator.createReport(options, grunt);
   });
 
