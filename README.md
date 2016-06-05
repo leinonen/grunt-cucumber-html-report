@@ -1,6 +1,10 @@
 # grunt-cucumber-html-report
 
-> Generate HTML reports from Cucumber json reports
+Create HTML reports from cucumber json report files. Uses mustache to transform json to HTML.
+Also writes embeddings (base64 encoded PNG images) to disk and includes them in the HTML, 
+useful for showing screenshots from Protractor for example.
+
+![](http://www.pharatropic.eu/images/3a84dd33ba7fab98dc62cc272a38258f.jpg)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -50,4 +54,4 @@ Default value: `./report`
 Output directory
 
 ## Author
-Written by Peter Leinonen, 2015.
+Written by Peter Leinonen, 2016.

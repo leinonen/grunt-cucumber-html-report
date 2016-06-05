@@ -28,7 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "cucumber-html-report": "^0.3.0"
+    "cucumber-html-report": "^0.3.3"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
