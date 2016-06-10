@@ -1,7 +1,7 @@
 {
   "name": "grunt-cucumber-html-report",
   "description": "Generate HTML reports from Cucumber json reports",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/leinonen/grunt-cucumber-html-report",
   "author": {
     "name": "Peter Leinonen",
@@ -28,7 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "cucumber-html-report": "^0.3.3"
+    "cucumber-html-report": "^0.3.4"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -38,6 +38,6 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "cucumber", "report"
   ]
 }
